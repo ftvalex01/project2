@@ -1,0 +1,45 @@
+
+<nav class="navbar navbar-light bg-light" id="navindex">
+  <h1>Federal Bureau of Investigation</h1>
+  <form class="container-fluid justify-content-end">
+    {{#if isLogin}}
+    <button class="btn btn-sm btn-outline-secondary" type="button" id="button-login" onclick="triggerLogOut()">Logout</button>
+    {{else}}
+    <button class="btn btn-sm btn-outline-secondary" type="button" id="button-login" onclick="goToLogin()">Loging</button>
+     <button class="btn btn-sm btn-outline-secondary" type="button" id="button-signup" onclick="goToSignUp()">Sign up</button>
+    {{/if}}
+  </form>
+</nav>
+<div>
+  <img src="/images/logo-fbi.jpg">
+</div>
+
+
+   <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Navbar</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/wanted">Characters</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/profile">Profile</a>
+              </li>
+             
+            </ul>
+               {{#if isLogin}}
+    <button class="btn btn-sm btn-outline-secondary" type="button" id="button-login" onclick="triggerLogOut()">Logout</button>
+    {{else}}
+    <button class="btn btn-sm btn-outline-secondary" type="button" id="button-login" onclick="goToLogin()">Loging</button>
+     <button class="btn btn-sm btn-outline-secondary" type="button" id="button-signup" onclick="goToSignUp()">Sign up</button>
+    {{/if}}
+          </div>
+        </div>
+      </nav>
