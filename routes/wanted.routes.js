@@ -7,13 +7,13 @@ const Api = require("../services/ApiHandler");
 const WantedApi = new Api()
 
 
-router.get('/wanted',(req, res)=>{
+router.get('/wanted',isLoggedIn,(req, res)=>{
     WantedApi
     .getAllWanted()
     .then((allWanted) => {
-        console.log(allWanted.data.items)
-        res.render(`wanted`, {Wanted: allWanted.data.items} )
-    
+        /* console.log(allWanted.data.items) */
+        res.render(`wanted`, {Wanted: allWanted.data.items})
+        
     })
     .catch(err => console.log(err));
     

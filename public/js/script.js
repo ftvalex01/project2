@@ -21,3 +21,4 @@ function triggerLogOut(){
   axios.get("/auth/logout")
   window.location.pathname ="/"
 }
+

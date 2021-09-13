@@ -1,28 +1,40 @@
-<div class='container'>
-  <h1>Characters list</h1>
 
-  <div class='row row row-cols-1 row-cols-sm-2 row-cols-md-3 g-5 my-5'>
-  {{!-- image name status --}}
-    {{#each Wanted}}
-    <div class='col'>
-      <div class='card shadow-sm'>
-        <img src="{{image}}" alt="">
-        <p>{{name}}</p>
-        <p>{{status}}</p>
-        <p>FUNCIONOOOOOOOOO</p>
-        <form action = "/add-favorite" method="POST">
-          
-          <input type="hidden" name="name" value={{name}}>
-          <input type="hidden" name="status" value={{status}}>
-          <input type="hidden" name="species" value={{species}}>
-          <input type="hidden" name="gender" value={{gender}}>
-          <input type="hidden" name="image" value={{image}}>
-          <input type="hidden" name="apiId" value={{id}}>
-
-          <button type="submit">Añadir a favoritos</button>
-        </form>
-      </div>
+  <div id="header">
+    <div id="imagenlogo">
+      <img src="/images/logo2.jpg">
     </div>
-    {{/each}}    
+    <div id="texto">
+      <h1 style="color:white">FBI</h1>
+    </div>
+    <div id="texto2">
+      <h2 id="h1index" style="color:white">Most Wanted Criminals</h2>
+    </div>
   </div>
+
+<div id="wantedcontainer">
+
+
+    <div class="row">
+      <div class="col">
+        {{#each Wanted}}
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">{{title}}</h5>
+            {{#each images}}
+            <img src="{{large}}" class="card-img-top img-thumbnail" alt="...">
+            {{/each}}
+            <p class="card-text">{{description}}</p>
+            <a href="#" class="btn btn-primary">Añadir a mi lista</a>
+          </div>
+        {{/each}}
+        </div>
+      </div>
+
 </div>
+
+
+
+
+
+    
+

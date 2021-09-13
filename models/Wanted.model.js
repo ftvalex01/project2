@@ -1,10 +1,15 @@
 const { Schema, model } = require("mongoose");
 
+
 // TODO: Please make sure you edit the user model to whatever makes sense in this case
 const wantedSchema = new Schema({
     aliases:{
         type: [String]
     },
+    description:{
+        type: String
+    },
+
     dates_of_birth_used:{
         type: [String]
     },
@@ -38,9 +43,9 @@ const wantedSchema = new Schema({
     field_offices:{
         type: String
     },
-    image:{
+    images:[{
         type: String
-    },
+    }],
     apiId:{
         type: Number
     }
