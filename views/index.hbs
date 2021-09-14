@@ -16,8 +16,11 @@
 <div id="imagenindex">
   <form class="container-fluid justify-content-end" id="form">
     {{#if isLogin}}
-    <button class="btn btn-sm btn-outline-secondary" type="button" id="button-login" onclick="triggerLogOut()">Logout</button>
-    <a class="nav-link" href="/wanted">Characters</a>
+    <button class="btn btn-sm btn-outline-secondary" type="button" id="button-login" onclick="triggerLogOut()" style="float:right">Logout</button>
+    <div id="botonesloged">
+    <a class="btn btn-sm btn-outline-secondary" href="/wanted">Wanted list</a>
+    <a class="btn btn-sm btn-outline-secondary" href="/follow-list">On follow</a>
+    </div>
     {{else}}
     <button class="btn btn-sm btn-outline-secondary" type="button" id="button-login" onclick="goToLogin()">Loging</button>
      <button class="btn btn-sm btn-outline-secondary" type="button" id="button-signup" onclick="goToSignUp()">Sign up</button>
