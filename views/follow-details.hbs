@@ -16,45 +16,67 @@
         </div>
     </div>
     <div class="container-follow-details-description">
+    
+   <div class="content">
  <table class="tg">
 <thead>
   <tr>
-    <th class="tg-0lax">Aliases</th>
-    <th class="tg-0lax">{{wanted.aliases}}</th>
-    <th class="tg-0lax">Occupations</th>
-    <th class="tg-0lax">{{wanted.occupations}}</th>
+    <th class="tg-0lax"contenteditable='true'>Aliases</th>
+    <th class="tg-0lax"contenteditable='true'>{{wanted.aliases}}</th>
+    <th class="tg-0lax"contenteditable='true'>Occupations</th>
+    <th class="tg-0lax"contenteditable='true'>{{wanted.occupations}}</th>
   </tr>
 </thead>
 <tbody>
   <tr>
-    <td class="tg-0lax">Date(s) of Birth Used:</td>
-    <td class="tg-0lax">{{wanted.dates_of_birth_used}}</td>
-    <td class="tg-0lax">Hair</td>
-    <td class="tg-0lax">{{wanted.hair}}</td>
+    <td class="tg-0lax"contenteditable='true'>Date(s) of Birth Used:</td>
+    <td class="tg-0lax"contenteditable='true'>{{wanted.dates_of_birth_used}}</td>
+    <td class="tg-0lax"contenteditable='true'>Hair</td>
+    <td class="tg-0lax"contenteditable='true'>{{wanted.hair}}</td>
   </tr>
   <tr>
-    <td class="tg-0lax">Nationality</td>
-    <td class="tg-0lax">{{wanted.nationality}}</td>
-    <td class="tg-0lax">Subject</td>
-    <td class="tg-0lax">{{wanted.subject}}</td>
+    <td class="tg-0lax" contenteditable='true'>Nationality</td>
+    <td class="tg-0lax" contenteditable='true'>{{wanted.nationality}}</td>
+    <td class="tg-0lax" contenteditable='true'>Subject</td>
+    <td class="tg-0lax" contenteditable='true'>{{wanted.subject}}</td>
   </tr>
   <tr>
-    <td class="tg-0lax">Weight:</td>
-    <td class="tg-0lax">{{wanted.weight}}</td>
-    <td class="tg-0lax">Field Offices</td>
-    <td class="tg-0lax">{{wanted.field_offices}}</td>
+    <td class="tg-0lax" contenteditable='true'>Weight:</td>
+    <td class="tg-0lax"contenteditable='true'>{{wanted.weight}}</td>
+    <td class="tg-0lax"contenteditable='true'>Field Offices</td>
+    <td class="tg-0lax"contenteditable='true'>{{wanted.field_offices}}</td>
   </tr>
   <tr>
-    <td class="tg-0lax">Heigth</td>
-    <td class="tg-0lax">{{wanted.heigth}}</td>
-    <td class="tg-0lax"></td>
-    <td class="tg-0lax"></td>
+    <td class="tg-0lax"contenteditable='true'>Height</td>
+    <td class="tg-0lax"contenteditable='true'>{{wanted.height}}</td>
+    <td class="tg-0lax"contenteditable='true'></td>
+    <td class="tg-0lax"contenteditable='true'></td>
   </tr>
 </tbody>
 </table>
+<button id="edit_content" class="btn btn-primary btn-large cambios">Save Changes</button>
+</div>
+  </div>
+  <div class="container-follow-details-abajo">
+      <div id="container-follow-details-abajo-1">
+      {{#if wanted.reward_text}}
+      <h3>Reward</h3>
+      <h4>{{wanted.reward_text}}</h4>
+       {{/if}}
+      {{#if wanted.remarks}}
+      <h3>Remarks</h3>
+      <h4>{{wanted.remarks}}</h4>
+      {{/if}}
     </div>
-    <div class="container-follow-details-abajo">
-      
+    <div id="container-follow-details-abajo-2">
+       {{#if wanted.caution}}
+      <h3>Caution</h3>
+      <h4>{{wanted.caution}}</h4>
+       {{/if}}
+      {{#if wanted.details}}
+      <h3>Remarks</h3>
+      <h4>{{wanted.details}}</h4>
+      {{/if}}
     </div>
 </div>
 
@@ -66,104 +88,3 @@
 
 
 
-{{!-- 
-<div id="general">
-<div id="tablecontainer">
-    <table id="tabla">
-        <thead>
-            <tr>
-             <th>
-                
-                    Title-
-            
-            </th>
-             <th>
-               
-                    Aliases-
-                
-            </th>
-             <th>
-                
-                    Description-
-               
-            </th>
-             <th>
-                
-                   Dates_of_birth_used-
-                
-            </th>
-             <th>
-                
-                    Hair--
-                
-            </th>
-             <th>
-                
-                    weight--
-                
-            </th>
-             <th>
-              
-                    Heigth--
-                
-            </th>
-             <th>
-                
-                    Occupations--
-                
-            </th>
-             <th>
-                
-                    Remarks--abajo
-                
-            </th>
-             <th>
-               
-                    Nationality--
-               
-            </th>
-             <th>
-                
-                    Subject--
-                
-            </th>
-             <th>
-               
-                    Reward_text--abajo
-                
-            </th>
-            <th>
-                
-                    Field Offices-
-                
-            </th>
-            </tr>
-            
-        </thead>
-      
-
-          
-
-               
-
-
-                <td>
-                    {{wanted.remarks}}--abajpo
-                </td>
-
-               
-
-                <td>
-                    {{wanted.reward_text}}
-                </td>
-
-            
-         
-</tbody>
-    </table>
-    <div id="tablaimagen">
-    <img src="{{wanted.image}}">
-</div>
-</div> 
-remarks caution reward and detail van abajo.
-</div> --}}

@@ -44,4 +44,46 @@ router.get('/follow-details/:id/delete', (req, res, next) => {
 
 
 
+
+router.post('/follow-details/:id', (req, res) => {
+  const  id  = req.params.id;
+
+  const {
+    aliases,
+    description,
+    dates_of_birth_used,
+    hair,
+    weight,
+    heigth,
+    occupations,
+    remarks,
+    nationality,
+    title,
+    subject,
+    reward_text,
+    field_offices,
+    image,
+    uid,
+} = req.body; 
+	Wanted.findByIdAndUpdate(id, { aliases,
+    description,
+    dates_of_birth_used,
+    hair,
+    weight,
+    heigth,
+    occupations,
+    remarks,
+    nationality,
+    title,
+    subject,
+    reward_text,
+    field_offices,
+    image,
+    uid, })
+		.then((freshWanted) => res.render(`/follow-details/:id`,freshWanted))
+});
+
+
+
+
 module.exports = router;

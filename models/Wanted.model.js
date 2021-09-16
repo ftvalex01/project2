@@ -19,7 +19,7 @@ const wantedSchema = new Schema({
     weight:{
         type: String
     },
-    heigth:{
+    height:{
         type: String
     },
     occupations:{
@@ -50,6 +50,12 @@ const wantedSchema = new Schema({
         type: String
     },
     id:{
+        type: String
+    },
+    details:{
+        type: String
+    },
+    caution:{
         type: String
     }
     

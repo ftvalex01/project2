@@ -26,7 +26,7 @@ const query = ({
         dates_of_birth_used,
         hair,
         weight,
-        heigth,
+        height,
         occupations,
         remarks,
         nationality,
@@ -36,6 +36,8 @@ const query = ({
         field_offices,
         image,
         uid,
+        details,
+        caution,
     }=req.body); 
    
 
