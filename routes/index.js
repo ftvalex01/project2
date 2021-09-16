@@ -1,4 +1,4 @@
-const isLoggedIn = require("../middleware/isLoggedIn");
+
 
 const router = require("express").Router();
 
@@ -9,12 +9,7 @@ router.get("/", (req, res, next) => {
     isLogin
   });
 });
-router.get("/auth", require('./auth'))
 
-router.get("/wanted",require('./wanted.routes'))
-
-
-router.get("/follow-list",isLoggedIn,require('./follow.routes'))
 
 
 module.exports = router;

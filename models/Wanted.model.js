@@ -43,11 +43,14 @@ const wantedSchema = new Schema({
     field_offices:{
         type: String
     },
-    images:[{
+    image:{
         type: String
-    }],
-    apiId:{
-        type: Number
+    },
+    uid:{
+        type: String
+    },
+    id:{
+        type: String
     }
     
 });

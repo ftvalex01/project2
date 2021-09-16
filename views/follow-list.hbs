@@ -1,1 +1,30 @@
-funciono
+<div id="backgrounddiv">
+  <div id="header">
+    <div id="imagenlogo">
+      <img src="/images/logo2.jpg">
+    </div>
+    <div id="texto">
+      <h1 style="color:white">FBI</h1>
+    </div>
+    <div id="texto2">
+      <h2 id="h1index" style="color:white">Most Wanted Criminals</h2>
+    </div>
+  </div>
+<div id="wantedcontainer">
+
+{{#each result.favorites}}
+ <div class="card-body">
+             
+            <h5 class="card-title">{{title}}</h5>
+            <img src="{{image}}" class="card-img-top img-thumbnail" alt="...">
+            <p class="card-text">{{description}}</p>
+          <a href="follow-details/{{_id}}"> ir a detalles</a>
+          
+           <a href="/follow-details/{{_id}}/delete">
+            <button>Borrar</button>
+           </a>
+ </div>
+ {{/each}}
+
+</div>
+</div>

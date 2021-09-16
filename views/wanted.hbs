@@ -13,19 +13,7 @@
 
 <div id="wantedcontainer">
   
- {{!--  <div class="card" style="width: 18rem;">
-    {{#each Wanted}}
-  <img class="card-img-top" src="..." alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title">{{title}}</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <form action = "/add-favorite" method="POST"></form>
-      <button type="submit">Añadir a favoritos</button>
-    </form>
-  </div>
-  {{/each}}
-</div>
-</div> --}}
+
 
 
            {{#each Wanted}}
@@ -36,25 +24,35 @@
             <img src="{{images.0.large}}" class="card-img-top img-thumbnail" alt="...">
             
             <p class="card-text">{{description}}</p>
+            
            <form action = "/add-favorite" method="POST">
           
-          <input type="hidden" name="name" value={{name}}>
-          <input type="hidden" name="status" value={{status}}>
-          <input type="hidden" name="species" value={{species}}>
-          <input type="hidden" name="gender" value={{gender}}>
-          <input type="hidden" name="image" value={{image}}>
-          <input type="hidden" name="apiId" value={{id}}>
+          <input type="hidden" name="title" value='{{title}}'>
+          <input type="hidden" name="uid" value='{{uid}}'>
+          <input type="hidden" name="aliases" value='{{aliases}}'>
+          <input type="hidden" name="description" value='{{description}}'>
+          <input type="hidden" name="dates_of_birth_used" value='{{dates_of_bith_used}}'>
+          <input type="hidden" name="hair" value='{{hair}}'>
+          <input type="hidden" name="weight" value='{{weight}}'>
+          <input type="hidden" name="heigth" value='{{heigth}}'>
+          <input type="hidden" name="occupations" value='{{occupations}}'>
+          <input type="hidden" name="remarks" value='{{remarks}}'>
+          <input type="hidden" name="nationality" value='{{nationality}}'>
+          <input type="hidden" name="subject" value='{{subject}}'>
+          <input type="hidden" name="reward_text" value='{{reward_text}}'>
+          <input type="hidden" name="field_offices" value='{{field_offices}}'>
+          <input type="hidden" name="image" value='{{images.0.large}}'>
+         
 
           <button type="submit" class="btn btn-primary btn-large">Añadir a favoritos</button>
+           </form>
           </div>
         {{/each}}
         </div>
-      </div>
-</div> 
+      
 
 
-{{!-- 
-mi tarjeta --}}
+
 
 
 

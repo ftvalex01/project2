@@ -13,50 +13,64 @@ router.get('/wanted',isLoggedIn,(req, res)=>{
     .then((allWanted) => {
         /* console.log(allWanted.data.items) */
         res.render(`wanted`, {Wanted: allWanted.data.items})
-        
+        //res.send(allWanted.data)
     })
     .catch(err => console.log(err));
 })
 
 
 router.post("/add-favorite", isLoggedIn ,(req, res) =>{
-    const query = { name, status, species, gender, image, apiId } = req.body
-    const idToCheck = req.body.apiId;
-        Character.find({apiId: idToCheck})
-        .then (charArray => {
-            //comprobar si ese apiId ya esta en db characters
-            if (charArray.length === 0) {
-                Character
-                    .create(query)
-                    .then(result => {
-                      User
-                        .findByIdAndUpdate(req.user._id,{$push : {favorites : result._id}})
-                        .then(()=>{
-                            res.redirect("/characters")
-                        })
-                    })
-                    .catch(err => console.log(err))
-            } else {
-                User
-                .findById(req.user._id)
-                .then((user)=>{
-                    if (!user.favorites.includes(charArray[0]._id)){
-                        User
-                        .findByIdAndUpdate(req.user._id,{$push : {favorites : charArray[0]._id}})
-                        .then(()=>{
-                            res.redirect("/characters")
-                        })
-                    }else{res.redirect("/characters")}
+const query = ({
+        aliases,
+        description,
+        dates_of_birth_used,
+        hair,
+        weight,
+        heigth,
+        occupations,
+        remarks,
+        nationality,
+        title,
+        subject,
+        reward_text,
+        field_offices,
+        image,
+        uid,
+    }=req.body); 
+   
+
+
+    
+    const userID = req.session.user._id;
+    const idToCheck = req.body.uid
+  
+Wanted.find({uid: idToCheck})
+    .then((wantedArr)=>{
+        if(wantedArr.length === 0){
+            Wanted.create(query)
+            .then((result)=>{
+                User.findByIdAndUpdate(userID,{$push:{favorites:result.id}})
+                
+                .then(()=>{
+                    res.redirect('/follow-list')
+                    //res.render('follow-list',{wanted:wanted})
+                    //res.send(wanted)
                 })
-                .catch((err)=>{
-                console.log(err)
-                })
-                
-                
-                
-            }
-        }) 
+            })
+        }else{
+            User.findById(userID)
+            .then((user)=>{
+                if(!user.favorites.includes(wantedArr[0]._id)){
+                   User.findByIdAndUpdate(userID,{$push:{favorites:wantedArr[0]._id}}) 
+                   .then(()=>{
+                       
+                       res.redirect('/follow-list')
+                   })
+                }
+            })
+        } 
     })
+})
 
 
 module.exports = router;
