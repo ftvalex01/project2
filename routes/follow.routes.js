@@ -42,19 +42,25 @@ router.get('/follow-details/:id/delete', (req, res, next) => {
 });
 
 
-
+/* router.get('/wanted/:id/edit', (req, res, next) => {
+  const{id} =req.params
+  Wanted.findById(id)
+  .then((wanted)=>{
+    res.redirect('/follow-details/:id',{wanted})
+  });
+}); */
 
 
 router.post('/follow-details/:id', (req, res) => {
-  const  id  = req.params.id;
+  const  {id}  = req.params;
 
-  const {
+  const query = {
     aliases,
     description,
     dates_of_birth_used,
     hair,
     weight,
-    heigth,
+    height,
     occupations,
     remarks,
     nationality,
@@ -64,23 +70,12 @@ router.post('/follow-details/:id', (req, res) => {
     field_offices,
     image,
     uid,
+    details,
+    caution
 } = req.body; 
-	Wanted.findByIdAndUpdate(id, { aliases,
-    description,
-    dates_of_birth_used,
-    hair,
-    weight,
-    heigth,
-    occupations,
-    remarks,
-    nationality,
-    title,
-    subject,
-    reward_text,
-    field_offices,
-    image,
-    uid, })
-		.then((freshWanted) => res.render(`/follow-details/:id`,freshWanted))
+	Wanted.findByIdAndUpdate(id, query)
+		.then(() => res.redirect(`/follow-details/${id}`))
+    .catch((err) =>console.log('soy el error',err))
 });
 
 

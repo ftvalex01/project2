@@ -15,13 +15,15 @@
 {{#each result.favorites}}
  <div class="card-body">
              
-            <h5 class="card-title">{{title}}</h5>
+            <h5 class="card-title followh5">{{title}}</h5>
             <img src="{{image}}" class="card-img-top img-thumbnail" alt="...">
-            <p class="card-text">{{description}}</p>
-          <a href="follow-details/{{_id}}"> ir a detalles</a>
+            <p class="card-text followh5" >{{description}}</p>
+          <a href="follow-details/{{_id}}"> 
+            <button>See Details</button>
+          </a>
           
            <a href="/follow-details/{{_id}}/delete">
-            <button>Borrar</button>
+            <button>Delete</button>
            </a>
  </div>
  {{/each}}

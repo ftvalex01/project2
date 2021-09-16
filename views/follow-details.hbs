@@ -61,26 +61,60 @@
       <div id="container-follow-details-abajo-1">
       {{#if wanted.reward_text}}
       <h3>Reward</h3>
-      <h4>{{wanted.reward_text}}</h4>
+      <h4>{{{wanted.reward_text}}}</h4>
        {{/if}}
       {{#if wanted.remarks}}
       <h3>Remarks</h3>
-      <h4>{{wanted.remarks}}</h4>
+      <h4>{{{wanted.remarks}}}</h4>
       {{/if}}
     </div>
     <div id="container-follow-details-abajo-2">
        {{#if wanted.caution}}
       <h3>Caution</h3>
-      <h4>{{wanted.caution}}</h4>
+      <h4>{{{wanted.caution}}}</h4>
        {{/if}}
       {{#if wanted.details}}
       <h3>Remarks</h3>
-      <h4>{{wanted.details}}</h4>
+      <h4>{{{wanted.details}}}</h4>
       {{/if}}
     </div>
 </div>
 
+<div id="input-form-div">
+<form action="/follow-details/{{wanted._id}}"  method="post">
 
+ <label for="aliases">Aliases:</label>
+<input type="text" name="aliases" value="{{wanted.aliases}}">
+
+ <label for="occupations">Occupations:</label>
+<input type="text" name="occupations" value="{{wanted.occupations}}">
+
+ <label for="Date(s) of Birth Used:">Date(s) of Birth Used:</label>
+<input type="text" name="Date(s) of Birth Used:" value="{{wanted.dates_of_birth_used}}">
+
+ <label for="hair">Hair:</label>
+<input type="text" name="hair" value="{{wanted.hair}}">
+
+ <label for="nationality">nationality:</label>
+<input type="text" name="nationality" value="{{wanted.nationality}}">
+
+ <label for="subject">subject:</label>
+<input type="text" name="subject" value="{{wanted.subject}}">
+
+ <label for="weight">weight:</label>
+<input type="text" name="weight" value="{{wanted.weight}}">
+
+ <label for="field_offices">field_offices:</label>
+<input type="text" name="field_offices" value="{{wanted.field_offices}}">
+
+ <label for="height">height:</label>
+<input type="text" name="height">
+
+
+  <button type="submit" class="btn btn-primary btn-large"> Save changes</button>
+</form>
+
+</div>
 
 
 

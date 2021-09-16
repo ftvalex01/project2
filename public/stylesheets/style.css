@@ -98,9 +98,9 @@ a {
   color:white;
 }
 #wantedcontainer img{
-  border-radius: 200px;
-  max-height: 150px;
-    max-width: 150px;
+  height: 200px;
+    width: auto;
+    object-fit: contain;
 }
 .card{
   position: relative;
@@ -113,7 +113,11 @@ a {
   
   border-radius: .25rem;
 }
-
+.followh5{
+  color:red;
+  margin-bottom: 10px;
+  margin-bottom: 20px;
+}
 
 
 
@@ -312,4 +316,13 @@ font-weight: bolder;
   color: red;
   font-size: 75px;
   font-weight: bolder;
+  }
+
+
+
+  /* prueba inputs */
+  #input-form-div{
+    border: 2px solid black;
+    width: 800px;
+    height: 800px;
   }
