@@ -325,4 +325,13 @@ font-weight: bolder;
     border: 2px solid black;
     width: 800px;
     height: 800px;
+    margin:0 auto;
+  }
+  #edit_content1{
+    margin:0 auto;
+
+ width: 20%;
+ 
+  background: red;
+  margin-top: 20px;
   }

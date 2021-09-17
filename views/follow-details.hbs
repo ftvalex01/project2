@@ -54,7 +54,7 @@
   </tr>
 </tbody>
 </table>
-<button id="edit_content" class="btn btn-primary btn-large cambios">Save Changes</button>
+
 </div>
   </div>
   <div class="container-follow-details-abajo">
@@ -78,9 +78,8 @@
       <h4>{{{wanted.details}}}</h4>
       {{/if}}
     </div>
-</div>
-
-<div id="input-form-div">
+    <h3>Add New Information</h3>
+  <div id="input-form-div">
 <form action="/follow-details/{{wanted._id}}"  method="post">
 
  <label for="aliases">Aliases:</label>
@@ -110,11 +109,14 @@
  <label for="height">height:</label>
 <input type="text" name="height">
 
+<button type="submit" id="edit_content1" class="btn btn-primary btn-large cambios">Save Changes</button>
 
-  <button type="submit" class="btn btn-primary btn-large"> Save changes</button>
 </form>
 
 </div>
+</div>
+
+
 
 
 
